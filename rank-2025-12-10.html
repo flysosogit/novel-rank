@@ -25,7 +25,7 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -86,6 +86,20 @@
         
         .dataTables_wrapper {
             margin-top: 20px;
+            width: 100%;
+            overflow-x: auto;
+        }
+        
+        #rankingTable {
+            width: 100% !important;
+            table-layout: fixed;
+        }
+        
+        #rankingTable th,
+        #rankingTable td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         .rank-change {
@@ -161,7 +175,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-crown"></i> 番茄小说月排名</h1>
+            <h1><i class="fas fa-crown"></i> 网络小说月排名</h1>
             <div class="subtitle">基于多维度的智能排名系统</div>
             <div class="meta-info">
                 <div class="meta-item">
@@ -181,7 +195,7 @@
         
         <div class="content">
             <h2><i class="fas fa-trophy"></i> 排名榜单</h2>
-            <p>点击表头可对表格进行排序（支持多列排序、搜索、分页）</p>
+            <p>点击表头可对表格进行排序</p>
             
             <table id="rankingTable" class="display" style="width:100%">
                 <thead>
@@ -859,9 +873,9 @@
         </div>
         
         <div class="footer">
-            <p>© 2025 番茄小说排名系统 | 数据仅供参考，排名每日自动更新</p>
+            <p>© 2025 网络小说排名系统 | 数据仅供参考，排名每日自动更新</p>
             <p>算法基于读者数、增长率、上榜天数等多维度加权计算</p>
-            <p>最后更新时间: 2025-12-10 12:17:19</p>
+            <p>最后更新时间: 2025-12-10 13:00:56</p>
         </div>
     </div>
     
@@ -878,10 +892,16 @@
                 "columnDefs": [
                     { "type": "num", "targets": [0, 3, 4, 5, 6] },
                     { "orderable": true, "targets": "_all" },
-                    { "width": "220px", "targets": [1] },
-                    { "width": "80px", "targets": [7] },
-                    { "width": "300px", "targets": [8] },
-                    { "width": "85px", "targets": [9] }
+                    { "width": "60px", "targets": [0] },      // 排名
+                    { "width": "220px", "targets": [1] },     // 书名
+                    { "width": "140px", "targets": [2] },     // 编号
+                    { "width": "90px", "targets": [3] },      // 综合得分
+                    { "width": "100px", "targets": [4] },     // 最大读者数
+                    { "width": "100px", "targets": [5] },     // 平均读者数
+                    { "width": "80px", "targets": [6] },      // 增长率
+                    { "width": "80px", "targets": [7] },      // 榜单
+                    { "width": "300px", "targets": [8] },     // 标签
+                    { "width": "85px", "targets": [9] }       // 状态
                 ]
             });
         });
