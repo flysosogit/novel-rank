@@ -145,6 +145,154 @@
             box-shadow: none;
         }
         
+        /* 排名列表样式 */
+        .ranking-list-section {
+            margin-top: 60px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .section-subtitle {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+        
+        .ranking-list-container {
+            overflow-x: auto;
+        }
+        
+        .ranking-list-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .ranking-list-table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .ranking-list-table th i {
+            margin-right: 8px;
+            color: #667eea;
+        }
+        
+        .ranking-list-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+            vertical-align: middle;
+        }
+        
+        .ranking-list-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .rank-type-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .rank-type-月 {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .rank-type-半年 {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .rank-type-全数据库 {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .view-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .view-link:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .view-link i {
+            margin-left: 5px;
+        }
+        
+        .ranking-list-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .file-count {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .show-more-btn {
+            padding: 10px 20px;
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .show-more-btn:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        .show-more-btn i {
+            transition: transform 0.3s;
+        }
+        
+        .show-more-btn.expanded i {
+            transform: rotate(180deg);
+        }
+        
         .footer {
             text-align: center;
             padding: 40px 20px;
@@ -203,6 +351,18 @@
             
             .card {
                 padding: 20px;
+            }
+            
+            .ranking-list-table th,
+            .ranking-list-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .ranking-list-footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
         }
     </style>
@@ -265,11 +425,111 @@
             
         </div>
         
+        
+        <div class="ranking-list-section">
+            <div class="section-header">
+                <h2><i class="fas fa-list-ol"></i> 历史排名列表</h2>
+                <p class="section-subtitle">查看历史排名数据，了解小说排名变化趋势</p>
+            </div>
+            
+            <div class="ranking-list-container">
+                <table class="ranking-list-table">
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-calendar"></i> 日期</th>
+                            <th><i class="fas fa-tag"></i> 类型</th>
+                            <th><i class="fas fa-file-alt"></i> 文件</th>
+                            <th><i class="fas fa-external-link-alt"></i> 操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-12-10</td>
+                            <td><span class="rank-type-badge rank-type-月">月排名</span></td>
+                            <td>rank-2025-12-10.html</td>
+                            <td><a href="rank-2025-12-10.html" class="view-link">查看 <i class="fas fa-external-link-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>2025-12-09</td>
+                            <td><span class="rank-type-badge rank-type-月">月排名</span></td>
+                            <td>rank-2025-12-09.html</td>
+                            <td><a href="rank-2025-12-09.html" class="view-link">查看 <i class="fas fa-external-link-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>2025-12-08</td>
+                            <td><span class="rank-type-badge rank-type-月">月排名</span></td>
+                            <td>rank-2025-12-08.html</td>
+                            <td><a href="rank-2025-12-08.html" class="view-link">查看 <i class="fas fa-external-link-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>2025-12-07</td>
+                            <td><span class="rank-type-badge rank-type-月">月排名</span></td>
+                            <td>rank-2025-12-07.html</td>
+                            <td><a href="rank-2025-12-07.html" class="view-link">查看 <i class="fas fa-external-link-alt"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="ranking-list-footer">
+                    <p>共找到 <span class="file-count">4</span> 个排名文件</p>
+                    <button id="showMoreBtn" class="show-more-btn">
+                        <i class="fas fa-chevron-down"></i> 查看更多排名
+                    </button>
+                </div>
+            </div>
+        </div>
+            
+        
         <div class="footer">
             <p>© 2025 网络小说排名系统 | 数据每日自动更新</p>
             <p>算法基于客观数据计算，排名仅供参考</p>
-            <p>最后更新时间: 2025-12-10 13:00:56</p>
+            <p>最后更新时间: 2025-12-10 13:17:01</p>
         </div>
     </div>
+    
+    <script>
+        // 查看更多排名功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            const rankingTable = document.querySelector('.ranking-list-table tbody');
+            const fileCount = document.querySelector('.file-count');
+            
+            if (showMoreBtn && rankingTable) {
+                // 初始只显示10行
+                const allRows = rankingTable.querySelectorAll('tr');
+                const totalRows = allRows.length;
+                
+                if (totalRows > 10) {
+                    // 隐藏第10行之后的行
+                    for (let i = 10; i < totalRows; i++) {
+                        allRows[i].style.display = 'none';
+                    }
+                    
+                    showMoreBtn.addEventListener('click', function() {
+                        const isExpanded = this.classList.contains('expanded');
+                        
+                        if (!isExpanded) {
+                            // 展开所有行
+                            for (let i = 10; i < totalRows; i++) {
+                                allRows[i].style.display = '';
+                            }
+                            this.innerHTML = '<i class="fas fa-chevron-up"></i> 收起列表';
+                            this.classList.add('expanded');
+                        } else {
+                            // 收起多余行
+                            for (let i = 10; i < totalRows; i++) {
+                                allRows[i].style.display = 'none';
+                            }
+                            this.innerHTML = '<i class="fas fa-chevron-down"></i> 查看更多排名';
+                            this.classList.remove('expanded');
+                        }
+                    });
+                } else {
+                    // 如果行数少于等于10，隐藏按钮
+                    showMoreBtn.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
 </html>
