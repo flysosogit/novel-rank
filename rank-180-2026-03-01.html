@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 网络小说半年排名 - 2026-03-01</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .header h1 i {
+            color: #ff6b6b;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .meta-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta-item i {
+            color: #4ecdc4;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .dataTables_wrapper {
+            margin-top: 20px;
+            width: 100%;
+            overflow-x: auto;
+        }
+        
+        #rankingTable {
+            width: 100% !important;
+            table-layout: fixed;
+        }
+        
+        #rankingTable th,
+        #rankingTable td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .rank-change {
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 0.9em;
+        }
+        
+        .rank-up {
+            color: #28a745;
+        }
+        
+        .rank-down {
+            color: #dc3545;
+        }
+        
+        .rank-same {
+            color: #6c757d;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 15px;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-crown"></i> 网络小说半年排名</h1>
+            <div class="subtitle">基于多维度的智能排名系统</div>
+            <div class="meta-info">
+                <div class="meta-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>排名日期: 2026-03-01</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-book"></i>
+                    <span>显示数量: 100 本</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>每日自动更新</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2><i class="fas fa-trophy"></i> 排名榜单</h2>
+            <p>点击表头可对表格进行排序</p>
+            
+            <table id="rankingTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>书名</th>
+                        <th>编号</th>
+                        <th>综合得分</th>
+                        <th>最大读者数</th>
+                        <th>平均读者数</th>
+                        <th>增长率</th>
+                        <th>榜单</th>
+                        <th>标签</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td>1<span class="rank-change rank-up">↑</span></td>
+                <td><strong>我不是戏神</strong></td>
+                <td><code>7276384138653862966</code></td>
+                <td>12.919</td>
+                <td>3949000</td>
+                <td>3713361</td>
+                <td>33321</td>
+                <td>男频阅读榜</td>
+                <td>都市高武,都市,穿越</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>2<span class="rank-change rank-up">↑</span></td>
+                <td><strong>十日终焉</strong></td>
+                <td><code>7143038691944959011</code></td>
+                <td>12.723</td>
+                <td>3570000</td>
+                <td>2672415</td>
+                <td>110679</td>
+                <td>男频阅读榜</td>
+                <td>悬疑脑洞,推理,无限流,求生,末日求生,群像</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>3<span class="rank-change rank-up">↑</span></td>
+                <td><strong>你们刷怪啊，刷我干嘛！</strong></td>
+                <td><code>7462405945180572697</code></td>
+                <td>12.666</td>
+                <td>2590000</td>
+                <td>1074568</td>
+                <td>291464</td>
+                <td>男频阅读榜</td>
+                <td>都市高武,都市,校花,都市异能</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td><strong>重返二十岁，带失恋儿子会所按摩</strong></td>
+                <td><code>7589553138307173400</code></td>
+                <td>12.023</td>
+                <td>1126000</td>
+                <td>709750</td>
+                <td>92464</td>
+                <td>男频新书榜</td>
+                <td>都市脑洞,都市,系统,神豪,校花</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>5<span class="rank-change rank-up">↑</span></td>
+                <td><strong>因为一个玩笑，我被杀人魔追求了</strong></td>
+                <td><code>7500777298694523966</code></td>
+                <td>11.912</td>
+                <td>289000</td>
+                <td>84959</td>
+                <td>39964</td>
+                <td>女频新书榜</td>
+                <td>女频悬疑,悬疑,推理,同人,悬疑恋爱</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>6<span class="rank-change rank-up">↑</span></td>
+                <td><strong>残疾大佬的小保姆</strong></td>
+                <td><code>7494665405391195161</code></td>
+                <td>11.816</td>
+                <td>296000</td>
+                <td>203427</td>
+                <td>19786</td>
+                <td>女频新书榜</td>
+                <td>豪门总裁,现代言情,甜宠,大佬,双洁,搞笑轻松</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>7<span class="rank-change rank-down">↓</span></td>
+                <td><strong>带球跑五年，疯批前任成了我老板</strong></td>
+                <td><code>7550658107555187736</code></td>
+                <td>11.684</td>
+                <td>238000</td>
+                <td>164000</td>
+                <td>148000</td>
+                <td>女频新书榜</td>
+                <td>豪门总裁,现代言情,总裁,带球跑,双洁,久别重逢</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>8<span class="rank-change rank-up">↑</span></td>
+                <td><strong>港婚日记</strong></td>
+                <td><code>7554319574804483096</code></td>
+                <td>11.562</td>
+                <td>325000</td>
+                <td>157017</td>
+                <td>23321</td>
+                <td>女频新书榜</td>
+                <td>星光璀璨,现代言情,婚恋,娱乐圈,明星,双洁</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>9<span class="rank-change rank-up">↑</span></td>
+                <td><strong>当高考状元穿成娱乐圈黑红女星</strong></td>
+                <td><code>7526812477347073086</code></td>
+                <td>11.540</td>
+                <td>339000</td>
+                <td>209188</td>
+                <td>23071</td>
+                <td>女频新书榜</td>
+                <td>星光璀璨,现代言情,娱乐圈,穿书,明星,打脸</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>10<span class="rank-change rank-up">↑</span></td>
+                <td><strong>哥，亲我老婆很爽是吗？</strong></td>
+                <td><code>7578825858480098366</code></td>
+                <td>11.525</td>
+                <td>762000</td>
+                <td>301754</td>
+                <td>53964</td>
+                <td>女频新书榜</td>
+                <td>豪门总裁,现代言情,总裁,豪门世家,暗恋,大佬</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>11<span class="rank-change rank-same">→</span></td>
+                <td><strong>漂亮主播在美恐电影里当万人迷</strong></td>
+                <td><code>7515332855157754904</code></td>
+                <td>11.340</td>
+                <td>99000</td>
+                <td>47612</td>
+                <td>3214</td>
+                <td>女频新书榜</td>
+                <td>悬疑脑洞,悬疑,系统,推理,直播,破案</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>12<span class="rank-change rank-down">↓</span></td>
+                <td><strong>疯批男主他有病，我来治！</strong></td>
+                <td><code>7537280689675176984</code></td>
+                <td>11.281</td>
+                <td>201000</td>
+                <td>110404</td>
+                <td>7821</td>
+                <td>女频新书榜</td>
+                <td>现言脑洞,现代言情,双洁,1v1,互宠,忠犬</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>13<span class="rank-change rank-up">↑</span></td>
+                <td><strong>在梁祝世界攻略马文才</strong></td>
+                <td><code>7547664531292441624</code></td>
+                <td>11.225</td>
+                <td>416000</td>
+                <td>164881</td>
+                <td>32357</td>
+                <td>女频新书榜</td>
+                <td>女频衍生,系统,穿越,反派,同人,衍生</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>14<span class="rank-change rank-up">↑</span></td>
+                <td><strong>辅助过于逆天，我被父母上交国家</strong></td>
+                <td><code>7562944066921450558</code></td>
+                <td>11.191</td>
+                <td>791000</td>
+                <td>483387</td>
+                <td>63750</td>
+                <td>男频新书榜</td>
+                <td>都市高武,都市,开局,都市异能,升级流,副本</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>15<span class="rank-change rank-up">↑</span></td>
+                <td><strong>怎奈她一身反骨，就爱给众神添堵</strong></td>
+                <td><code>7451062991820164158</code></td>
+                <td>11.176</td>
+                <td>188000</td>
+                <td>81110</td>
+                <td>17714</td>
+                <td>女频新书榜</td>
+                <td>玄幻言情,古代言情,幻想言情,古色古香</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>16<span class="rank-change rank-up">↑</span></td>
+                <td><strong>带着一亿年终奖回家过年</strong></td>
+                <td><code>7595966265026415640</code></td>
+                <td>11.167</td>
+                <td>760000</td>
+                <td>493759</td>
+                <td>60464</td>
+                <td>男频新书榜</td>
+                <td>都市脑洞,都市,系统,神豪</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>17<span class="rank-change rank-up">↑</span></td>
+                <td><strong>囚奴：疯批军火大佬日夜囚宠上瘾</strong></td>
+                <td><code>7584818220356357144</code></td>
+                <td>11.076</td>
+                <td>627000</td>
+                <td>475250</td>
+                <td>46679</td>
+                <td>女频新书榜</td>
+                <td>豪门总裁,现代言情,宠妻,甜宠,大佬,年龄差</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>18<span class="rank-change rank-up">↑</span></td>
+                <td><strong>都快打进京城了，你说要撤军？！</strong></td>
+                <td><code>7551048352729680920</code></td>
+                <td>11.066</td>
+                <td>552000</td>
+                <td>183141</td>
+                <td>41357</td>
+                <td>男频新书榜</td>
+                <td>历史古代,历史,穿越,穿书,架空,武将</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>19<span class="rank-change rank-up">↑</span></td>
+                <td><strong>重生后被疯批前夫强取豪夺了</strong></td>
+                <td><code>7538766334012689470</code></td>
+                <td>11.041</td>
+                <td>213000</td>
+                <td>99609</td>
+                <td>13929</td>
+                <td>女频新书榜</td>
+                <td>宫斗宅斗,古代言情,重生,病娇,HE,打脸</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>20</td>
+                <td><strong>穿成破产太子爷的恶毒前女友</strong></td>
+                <td><code>7597604097813924926</code></td>
+                <td>11.037</td>
+                <td>671000</td>
+                <td>373000</td>
+                <td>60536</td>
+                <td>女频新书榜</td>
+                <td>豪门总裁,现代言情,豪门世家,独宠,总裁,忠犬,带球跑,穿书</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>21<span class="rank-change rank-up">↑</span></td>
+                <td><strong>转生饕餮，重生女帝破大防</strong></td>
+                <td><code>7547175115272768574</code></td>
+                <td>11.030</td>
+                <td>636000</td>
+                <td>404308</td>
+                <td>65214</td>
+                <td>男频新书榜</td>
+                <td>都市高武,都市,系统,重生,女帝,都市异能</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>22<span class="rank-change rank-up">↑</span></td>
+                <td><strong>老婆给我一巴掌，我说没有上次响</strong></td>
+                <td><code>7520542887583419454</code></td>
+                <td>11.012</td>
+                <td>235000</td>
+                <td>98439</td>
+                <td>26107</td>
+                <td>女频新书榜</td>
+                <td>快穿,现代言情,幻想言情,直播,豪门世家,一见钟情</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>23<span class="rank-change rank-up">↑</span></td>
+                <td><strong>高考体检：我体内查出核反应堆</strong></td>
+                <td><code>7574591013851778073</code></td>
+                <td>11.011</td>
+                <td>656000</td>
+                <td>404731</td>
+                <td>63321</td>
+                <td>男频新书榜</td>
+                <td>都市高武,都市,系统,穿越,无敌,灵气复苏</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>24<span class="rank-change rank-up">↑</span></td>
+                <td><strong>重生后贵妃娘娘变了，皇上慌了</strong></td>
+                <td><code>7524976997542399000</code></td>
+                <td>11.000</td>
+                <td>293000</td>
+                <td>136192</td>
+                <td>33893</td>
+                <td>女频新书榜</td>
+                <td>宫斗宅斗,古代言情,重生,王妃,古色古香</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>25<span class="rank-change rank-up">↑</span></td>
+                <td><strong>强扭的校草酸又涩，重生后不追了</strong></td>
+                <td><code>7545405014261369918</code></td>
+                <td>10.997</td>
+                <td>101000</td>
+                <td>66429</td>
+                <td>5857</td>
+                <td>女频新书榜</td>
+                <td>青春甜宠,现代言情,校园,重生,双洁,追妻</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>26<span class="rank-change rank-up">↑</span></td>
+                <td><strong>床搭子</strong></td>
+                <td><code>7566239227621428248</code></td>
+                <td>10.949</td>
+                <td>165000</td>
+                <td>88655</td>
+                <td>14679</td>
+                <td>女频新书榜</td>
+                <td>职场婚恋,现代言情,婚恋,甜宠,闪婚,双洁</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>27</td>
+                <td><strong>人前不熟！人后备孕！夜夜被宠亲</strong></td>
+                <td><code>7595562847300504600</code></td>
+                <td>10.949</td>
+                <td>698000</td>
+                <td>424087</td>
+                <td>39786</td>
+                <td>女频新书榜</td>
+                <td>豪门总裁,现代言情,甜宠,先婚后爱,闪婚,位尊权重</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>28<span class="rank-change rank-up">↑</span></td>
+                <td><strong>崽崽直播：弹幕教我认亲督军府</strong></td>
+                <td><code>7529868009909783614</code></td>
+                <td>10.926</td>
+                <td>23000</td>
+                <td>7191</td>
+                <td>1701</td>
+                <td>女频新书榜</td>
+                <td>民国言情,现代言情,系统,直播,团宠,民国</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>29<span class="rank-change rank-up">↑</span></td>
+                <td><strong>星际觉醒华夏诗词天赋，我无敌了</strong></td>
+                <td><code>7543591563834690622</code></td>
+                <td>10.921</td>
+                <td>99000</td>
+                <td>55088</td>
+                <td>9321</td>
+                <td>女频新书榜</td>
+                <td>科幻末世,系统,穿越,星际,无敌,无CP</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>30<span class="rank-change rank-up">↑</span></td>
+                <td><strong>帅府家法</strong></td>
+                <td><code>7559229765194878014</code></td>
+                <td>10.919</td>
+                <td>12000</td>
+                <td>7921</td>
+                <td>843</td>
+                <td>女频新书榜</td>
+                <td>民国言情,现代言情,总裁,民国,强强</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>31<span class="rank-change rank-down">↓</span></td>
+                <td><strong>温柔哄！宝贝乖，求你给个名分</strong></td>
+                <td><code>7542722898679565337</code></td>
+                <td>10.912</td>
+                <td>100000</td>
+                <td>58574</td>
+                <td>2964</td>
+                <td>女频新书榜</td>
+                <td>青春甜宠,现代言情,校园,日久生情,暗恋,双洁</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>32<span class="rank-change rank-up">↑</span></td>
+                <td><strong>西游：开局拜师太上老君</strong></td>
+                <td><code>7548681439861017662</code></td>
+                <td>10.910</td>
+                <td>229000</td>
+                <td>135675</td>
+                <td>22714</td>
+                <td>男频新书榜</td>
+                <td>东方仙侠,玄幻,仙侠,穿越,奇幻仙侠,开局</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>33<span class="rank-change rank-up">↑</span></td>
+                <td><strong>kpl：我想睡觉</strong></td>
+                <td><code>7523535122117708824</code></td>
+                <td>10.901</td>
+                <td>13000</td>
+                <td>6745</td>
+                <td>650</td>
+                <td>女频新书榜</td>
+                <td>游戏体育,直播,无CP,电竞,游戏主播</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>34<span class="rank-change rank-up">↑</span></td>
+                <td><strong>平妻？狗都不当，满塘大佬不香嘛</strong></td>
+                <td><code>7536690669104942142</code></td>
+                <td>10.897</td>
+                <td>588000</td>
+                <td>362750</td>
+                <td>62250</td>
+                <td>女频新书榜</td>
+                <td>宫斗宅斗,古代言情,虐渣,异世穿越,穿书,魂穿,大佬</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>35<span class="rank-change rank-up">↑</span></td>
+                <td><strong>一人：我元婴修士，被哪都通挖了</strong></td>
+                <td><code>7560521075574967321</code></td>
+                <td>10.894</td>
+                <td>627000</td>
+                <td>429682</td>
+                <td>59393</td>
+                <td>男频新书榜</td>
+                <td>男频衍生,系统,穿越,盗墓,同人,衍生</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>36<span class="rank-change rank-down">↓</span></td>
+                <td><strong>糙汉修车工和他的娇软妻</strong></td>
+                <td><code>7543523594526002200</code></td>
+                <td>10.892</td>
+                <td>102000</td>
+                <td>68522</td>
+                <td>3357</td>
+                <td>女频新书榜</td>
+                <td>职场婚恋,现代言情,萌宝,家庭,养崽,家长里短</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>37<span class="rank-change rank-up">↑</span></td>
+                <td><strong>直播反串：我一笑倾城，掰弯全网</strong></td>
+                <td><code>7551447592081558552</code></td>
+                <td>10.866</td>
+                <td>555000</td>
+                <td>322519</td>
+                <td>61679</td>
+                <td>男频新书榜</td>
+                <td>都市脑洞,都市,系统,穿越,直播,大佬</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>38<span class="rank-change rank-down">↓</span></td>
+                <td><strong>死士穿成反派亲妈，上娃综爆红了</strong></td>
+                <td><code>7446789811001625662</code></td>
+                <td>10.857</td>
+                <td>65000</td>
+                <td>36141</td>
+                <td>2821</td>
+                <td>女频新书榜</td>
+                <td>星光璀璨,现代言情,穿越,直播,反派,黑化</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>39<span class="rank-change rank-up">↑</span></td>
+                <td><strong>春色难驯</strong></td>
+                <td><code>7565802221116345369</code></td>
+                <td>10.836</td>
+                <td>220000</td>
+                <td>106974</td>
+                <td>14750</td>
+                <td>女频新书榜</td>
+                <td>青春甜宠,豪门世家,独宠,甜宠,久别重逢,宠妻,总裁</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>40<span class="rank-change rank-up">↑</span></td>
+                <td><strong>开局宫斗马皇后，九族不够十族凑</strong></td>
+                <td><code>7566635419597556760</code></td>
+                <td>10.830</td>
+                <td>387000</td>
+                <td>164485</td>
+                <td>24893</td>
+                <td>男频新书榜</td>
+                <td>历史脑洞,历史,穿越,开局,国运,副本</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>41<span class="rank-change rank-up">↑</span></td>
+                <td><strong>被退婚后，霍医生千疼万宠</strong></td>
+                <td><code>7566858308213034046</code></td>
+                <td>10.821</td>
+                <td>199000</td>
+                <td>89671</td>
+                <td>19071</td>
+                <td>女频新书榜</td>
+                <td>职场婚恋,现代言情,宠妻,婚恋,豪门世家,医生</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>42<span class="rank-change rank-up">↑</span></td>
+                <td><strong>团播：神豪系统是我榜一</strong></td>
+                <td><code>7546829927018941465</code></td>
+                <td>10.815</td>
+                <td>54000</td>
+                <td>35292</td>
+                <td>3107</td>
+                <td>女频新书榜</td>
+                <td>星光璀璨,现代言情,系统,穿越,直播,无CP</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>43<span class="rank-change rank-up">↑</span></td>
+                <td><strong>浮生未敢念长安</strong></td>
+                <td><code>7540318343840926745</code></td>
+                <td>10.814</td>
+                <td>16000</td>
+                <td>6010</td>
+                <td>1133</td>
+                <td>女频新书榜</td>
+                <td>民国言情,现代言情,民国,谍战,久别重逢</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>44</td>
+                <td><strong>忍界老资历：从六道活到博人传</strong></td>
+                <td><code>7597482281938193432</code></td>
+                <td>10.810</td>
+                <td>555000</td>
+                <td>408700</td>
+                <td>50786</td>
+                <td>男频新书榜</td>
+                <td>动漫衍生,系统,穿越,二次元,同人,衍生</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>45<span class="rank-change rank-up">↑</span></td>
+                <td><strong>全民求生：提前三小时登录</strong></td>
+                <td><code>7567409382451842073</code></td>
+                <td>10.808</td>
+                <td>66000</td>
+                <td>21222</td>
+                <td>8684</td>
+                <td>女频新书榜</td>
+                <td>游戏体育,重生,无CP,大佬,天灾,基建</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>46<span class="rank-change rank-up">↑</span></td>
+                <td><strong>女多男少，99个女神拿我当国宝</strong></td>
+                <td><code>7560950280703986712</code></td>
+                <td>10.805</td>
+                <td>460000</td>
+                <td>291605</td>
+                <td>47071</td>
+                <td>男频新书榜</td>
+                <td>都市脑洞,都市,系统,穿越,多女主,无脑爽</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>47</td>
+                <td><strong>四合院：跪完海子我跑路了</strong></td>
+                <td><code>7606811962395069464</code></td>
+                <td>10.800</td>
+                <td>361000</td>
+                <td>253000</td>
+                <td>78800</td>
+                <td>男频新书榜</td>
+                <td>男频衍生,衍生,同人,魂穿,四合院,穿越,空间</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>48<span class="rank-change rank-down">↓</span></td>
+                <td><strong>豪门弃妇搬到了派出所隔壁</strong></td>
+                <td><code>7539395318983429182</code></td>
+                <td>10.800</td>
+                <td>170000</td>
+                <td>63388</td>
+                <td>4036</td>
+                <td>女频新书榜</td>
+                <td>职场婚恋,现代言情,甜宠,家庭,家长里短</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>49<span class="rank-change rank-up">↑</span></td>
+                <td><strong>杀死那个春夜</strong></td>
+                <td><code>7477468603504135230</code></td>
+                <td>10.800</td>
+                <td>154000</td>
+                <td>71049</td>
+                <td>8464</td>
+                <td>女频新书榜</td>
+                <td>青春甜宠,现代言情,双洁,1v1,群像,白切黑</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>50<span class="rank-change rank-up">↑</span></td>
+                <td><strong>认路人甲当爹后我喜提反派全家桶</strong></td>
+                <td><code>7574398565431135256</code></td>
+                <td>10.796</td>
+                <td>506000</td>
+                <td>364257</td>
+                <td>33536</td>
+                <td>女频新书榜</td>
+                <td>青春甜宠,现代言情,校园,家长里短,重生,前世今生,真假千金,病娇,反派</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>51<span class="rank-change rank-up">↑</span></td>
+                <td><strong>在贵族学院成万人迷，宝宝好撩</strong></td>
+                <td><code>7581043443707694105</code></td>
+                <td>10.793</td>
+                <td>448000</td>
+                <td>255019</td>
+                <td>31429</td>
+                <td>女频新书榜</td>
+                <td>青春甜宠,现代言情,校园,总裁,天才,豪门世家</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>52<span class="rank-change rank-down">↓</span></td>
+                <td><strong>雨蒙蒙后见晴天</strong></td>
+                <td><code>7551849559027108926</code></td>
+                <td>10.770</td>
+                <td>20000</td>
+                <td>5519</td>
+                <td>1721</td>
+                <td>女频新书榜</td>
+                <td>民国言情,现代言情,豪门世家,民国,总裁,打脸</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>53<span class="rank-change rank-up">↑</span></td>
+                <td><strong>普女也能成为万人迷主播吗</strong></td>
+                <td><code>7505716681080065086</code></td>
+                <td>10.752</td>
+                <td>61000</td>
+                <td>36083</td>
+                <td>4321</td>
+                <td>女频新书榜</td>
+                <td>星光璀璨,现代言情,明星,直播</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>54<span class="rank-change rank-up">↑</span></td>
+                <td><strong>霍家主母用三招锁住百年荣华富贵</strong></td>
+                <td><code>7575465747053300798</code></td>
+                <td>10.746</td>
+                <td>55000</td>
+                <td>34108</td>
+                <td>3964</td>
+                <td>女频新书榜</td>
+                <td>民国言情,现代言情,民国,婚恋</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>55<span class="rank-change rank-same">→</span></td>
+                <td><strong>嘿嘿，我看大叔你也挺眉清目秀嘛</strong></td>
+                <td><code>7557995001574067224</code></td>
+                <td>10.736</td>
+                <td>374000</td>
+                <td>157250</td>
+                <td>43179</td>
+                <td>男频新书榜</td>
+                <td>都市日常,都市,重生</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>56<span class="rank-change rank-up">↑</span></td>
+                <td><strong>三角洲：开局诛仙，棠舟第一武将</strong></td>
+                <td><code>7593654624171592729</code></td>
+                <td>10.729</td>
+                <td>487000</td>
+                <td>328595</td>
+                <td>37036</td>
+                <td>男频新书榜</td>
+                <td>游戏体育,直播,网游,无敌,开局,打脸</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>57<span class="rank-change rank-down">↓</span></td>
+                <td><strong>为防止我灭世，国家派人与我贴贴</strong></td>
+                <td><code>7490885757054225432</code></td>
+                <td>10.721</td>
+                <td>433000</td>
+                <td>259023</td>
+                <td>39321</td>
+                <td>男频新书榜</td>
+                <td>都市高武,都市,系统,重生,都市异能,搞笑轻松</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>58<span class="rank-change rank-up">↑</span></td>
+                <td><strong>盗墓：鉴苍天！我真的是个公务员</strong></td>
+                <td><code>7567733711769193497</code></td>
+                <td>10.716</td>
+                <td>64000</td>
+                <td>23488</td>
+                <td>4750</td>
+                <td>女频新书榜</td>
+                <td>女频悬疑,悬疑恋爱,悬疑,灵异,盗墓,同人</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>59<span class="rank-change rank-up">↑</span></td>
+                <td><strong>婚夜诱妻</strong></td>
+                <td><code>7577064821254802494</code></td>
+                <td>10.699</td>
+                <td>421000</td>
+                <td>287622</td>
+                <td>40786</td>
+                <td>女频新书榜</td>
+                <td>豪门总裁,现代言情,婚恋,破镜重圆,双洁,追妻</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>60<span class="rank-change rank-up">↑</span></td>
+                <td><strong>你说我是灾厄？可我是海帕杰顿啊</strong></td>
+                <td><code>7589262065085189144</code></td>
+                <td>10.697</td>
+                <td>486000</td>
+                <td>306167</td>
+                <td>45643</td>
+                <td>男频新书榜</td>
+                <td>都市高武,都市,穿越,校花,都市异能,同人</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>61<span class="rank-change rank-down">↓</span></td>
+                <td><strong>开局上交黑暗动乱，家族助我成仙</strong></td>
+                <td><code>7579918004901645374</code></td>
+                <td>10.695</td>
+                <td>515000</td>
+                <td>314583</td>
+                <td>36036</td>
+                <td>男频新书榜</td>
+                <td>玄幻脑洞,玄幻,系统,诸天万界,天才,开局</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>62<span class="rank-change rank-up">↑</span></td>
+                <td><strong>大唐李承乾，提弟弟人头质问李二</strong></td>
+                <td><code>7569260565458062361</code></td>
+                <td>10.694</td>
+                <td>455000</td>
+                <td>212810</td>
+                <td>40643</td>
+                <td>男频新书榜</td>
+                <td>历史古代,历史,大唐</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>63<span class="rank-change rank-up">↑</span></td>
+                <td><strong>创业失败在寿衣店加入公门驱邪</strong></td>
+                <td><code>7590397866686811160</code></td>
+                <td>10.690</td>
+                <td>390000</td>
+                <td>154973</td>
+                <td>42393</td>
+                <td>男频新书榜</td>
+                <td>悬疑灵异,悬疑,灵异,无女主,风水秘术</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>64<span class="rank-change rank-up">↑</span></td>
+                <td><strong>报告队长，我不服！</strong></td>
+                <td><code>7503017866078194750</code></td>
+                <td>10.686</td>
+                <td>10000</td>
+                <td>6769</td>
+                <td>773</td>
+                <td>女频新书榜</td>
+                <td>游戏体育,打脸</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>65<span class="rank-change rank-down">↓</span></td>
+                <td><strong>斩神：七十岁老人，大骂总司令！</strong></td>
+                <td><code>7520670594015185945</code></td>
+                <td>10.666</td>
+                <td>544000</td>
+                <td>279771</td>
+                <td>39000</td>
+                <td>男频新书榜</td>
+                <td>男频衍生,系统,诸天万界,天才,同人,衍生</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>66<span class="rank-change rank-same">→</span></td>
+                <td><strong>三角洲：我的妹妹是主播</strong></td>
+                <td><code>7505406108253555737</code></td>
+                <td>10.663</td>
+                <td>379000</td>
+                <td>158621</td>
+                <td>20571</td>
+                <td>男频新书榜</td>
+                <td>游戏体育,系统,穿越,直播,多女主,网游</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>67</td>
+                <td><strong>开局解除人体限制，杀杀杀杀杀</strong></td>
+                <td><code>7593705897637989401</code></td>
+                <td>10.662</td>
+                <td>479000</td>
+                <td>329000</td>
+                <td>44571</td>
+                <td>男频新书榜</td>
+                <td>都市高武,都市,系统,无敌,开局,黑化</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>68<span class="rank-change rank-up">↑</span></td>
+                <td><strong>掘地求生：我靠痒痒挠挖地成神</strong></td>
+                <td><code>7569186487212723262</code></td>
+                <td>10.653</td>
+                <td>21000</td>
+                <td>10182</td>
+                <td>1540</td>
+                <td>女频新书榜</td>
+                <td>游戏体育,天灾,异世穿越,女强,无脑爽,重生,大佬</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>69<span class="rank-change rank-up">↑</span></td>
+                <td><strong>谍战：开局获得，签到系统</strong></td>
+                <td><code>7576660197423189054</code></td>
+                <td>10.647</td>
+                <td>39000</td>
+                <td>10964</td>
+                <td>4036</td>
+                <td>女频新书榜</td>
+                <td>民国言情,现代言情,谍战,系统,穿越</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>70<span class="rank-change rank-down">↓</span></td>
+                <td><strong>重生撕毁离婚申请，随军夜被宠哭</strong></td>
+                <td><code>7553538174463527961</code></td>
+                <td>10.646</td>
+                <td>454000</td>
+                <td>299920</td>
+                <td>49786</td>
+                <td>女频新书榜</td>
+                <td>年代,现代言情,重生,空间,破镜重圆,双洁</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>71<span class="rank-change rank-up">↑</span></td>
+                <td><strong>盗笔：因为太怕死全点武力值了</strong></td>
+                <td><code>7565417503392795673</code></td>
+                <td>10.644</td>
+                <td>98000</td>
+                <td>36792</td>
+                <td>3571</td>
+                <td>女频新书榜</td>
+                <td>悬疑脑洞,悬疑,系统,穿越,盗墓,灵异</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>72<span class="rank-change rank-up">↑</span></td>
+                <td><strong>藏书阁中百万年，我成仙帝了</strong></td>
+                <td><code>7546124483543698457</code></td>
+                <td>10.637</td>
+                <td>398000</td>
+                <td>258200</td>
+                <td>31750</td>
+                <td>男频新书榜</td>
+                <td>玄幻脑洞,玄幻,系统,架空,东方玄幻,剑修</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>73<span class="rank-change rank-down">↓</span></td>
+                <td><strong>家人惨死，我化身炸弹狂人！</strong></td>
+                <td><code>7565525046836350014</code></td>
+                <td>10.636</td>
+                <td>377000</td>
+                <td>230451</td>
+                <td>62090</td>
+                <td>男频新书榜</td>
+                <td>悬疑灵异,悬疑,推理</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>74</td>
+                <td><strong>三角洲：你说谁实力受损？</strong></td>
+                <td><code>7594661573939956760</code></td>
+                <td>10.635</td>
+                <td>505000</td>
+                <td>348850</td>
+                <td>36071</td>
+                <td>男频新书榜</td>
+                <td>动漫衍生,穿越,网游,无女主,同人,衍生</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>75<span class="rank-change rank-same">→</span></td>
+                <td><strong>神豪：开局留学美利坚，玩转欧美</strong></td>
+                <td><code>7473232106252930110</code></td>
+                <td>10.627</td>
+                <td>396000</td>
+                <td>194532</td>
+                <td>30179</td>
+                <td>男频新书榜</td>
+                <td>都市脑洞,都市,系统,神豪,开局,搞笑轻松</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>76</td>
+                <td><strong>快穿：你男朋友给我尝尝</strong></td>
+                <td><code>7595142520401579032</code></td>
+                <td>10.618</td>
+                <td>514000</td>
+                <td>329750</td>
+                <td>34786</td>
+                <td>女频新书榜</td>
+                <td>快穿,现代言情,系统,总裁,娱乐圈,明星</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>77<span class="rank-change rank-same">→</span></td>
+                <td><strong>军区大院来了个睡美人</strong></td>
+                <td><code>7547995740765703230</code></td>
+                <td>10.611</td>
+                <td>401000</td>
+                <td>212625</td>
+                <td>36464</td>
+                <td>女频新书榜</td>
+                <td>年代,现代言情,幻想言情,穿越,家长里短</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>78<span class="rank-change rank-up">↑</span></td>
+                <td><strong>京遇妄念</strong></td>
+                <td><code>7550320974806125592</code></td>
+                <td>10.603</td>
+                <td>87000</td>
+                <td>64054</td>
+                <td>4036</td>
+                <td>女频新书榜</td>
+                <td>青春甜宠,现代言情,校园,破镜重圆,暗恋,双洁</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>79</td>
+                <td><strong>多金的老婆是哑巴，那我可享福了</strong></td>
+                <td><code>7597718956375280665</code></td>
+                <td>10.600</td>
+                <td>488000</td>
+                <td>344059</td>
+                <td>38071</td>
+                <td>男频新书榜</td>
+                <td>都市日常,都市,重生,校花,单女主,1v1</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>80</td>
+                <td><strong>男主你嫌弃病娇女财阀？我超爱！</strong></td>
+                <td><code>7592663069747055678</code></td>
+                <td>10.595</td>
+                <td>462000</td>
+                <td>328739</td>
+                <td>42964</td>
+                <td>男频新书榜</td>
+                <td>都市脑洞,都市,系统,穿越,穿书,大小姐</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>81<span class="rank-change rank-up">↑</span></td>
+                <td><strong>叼奶瓶上门找爹！杀神爆改男妈妈</strong></td>
+                <td><code>7576272639279238169</code></td>
+                <td>10.592</td>
+                <td>477000</td>
+                <td>284800</td>
+                <td>31321</td>
+                <td>女频新书榜</td>
+                <td>古言脑洞,异世穿越,团宠,养崽,穿越,萌宝</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>82<span class="rank-change rank-up">↑</span></td>
+                <td><strong>一拳：穿成KING，秒开死门！</strong></td>
+                <td><code>7573737150894574616</code></td>
+                <td>10.592</td>
+                <td>437000</td>
+                <td>215881</td>
+                <td>29500</td>
+                <td>男频新书榜</td>
+                <td>动漫衍生,系统,穿越,二次元,同人,衍生</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>83<span class="rank-change rank-down">↓</span></td>
+                <td><strong>火影：男神鸣人，三代求我当火影</strong></td>
+                <td><code>7531296913253993534</code></td>
+                <td>10.591</td>
+                <td>433000</td>
+                <td>247316</td>
+                <td>36429</td>
+                <td>男频新书榜</td>
+                <td>动漫衍生,系统,穿越,二次元,火影,衍生</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>84<span class="rank-change rank-up">↑</span></td>
+                <td><strong>不想做盘古的大罗，不是好大罗</strong></td>
+                <td><code>7467215925431766040</code></td>
+                <td>10.591</td>
+                <td>181000</td>
+                <td>80154</td>
+                <td>13821</td>
+                <td>男频新书榜</td>
+                <td>东方仙侠,玄幻,仙侠,洪荒,诸天万界,奇幻仙侠</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>85<span class="rank-change rank-down">↓</span></td>
+                <td><strong>末日求生：开局无限火力</strong></td>
+                <td><code>7577483354975521854</code></td>
+                <td>10.587</td>
+                <td>351000</td>
+                <td>168850</td>
+                <td>39250</td>
+                <td>男频新书榜</td>
+                <td>科幻末世,穿越,末世,多女主,求生,开局</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>86<span class="rank-change rank-up">↑</span></td>
+                <td><strong>罗子君重生离婚前</strong></td>
+                <td><code>7544620558881655870</code></td>
+                <td>10.582</td>
+                <td>125000</td>
+                <td>70304</td>
+                <td>8893</td>
+                <td>女频新书榜</td>
+                <td>女频衍生,重生,家庭,同人,家长里短,衍生</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>87<span class="rank-change rank-down">↓</span></td>
+                <td><strong>废太子是你，求我继承皇位又是你</strong></td>
+                <td><code>7557027653723622462</code></td>
+                <td>10.577</td>
+                <td>348000</td>
+                <td>201711</td>
+                <td>40357</td>
+                <td>男频新书榜</td>
+                <td>玄幻脑洞,玄幻,系统,穿越,无敌,架空</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>88<span class="rank-change rank-up">↑</span></td>
+                <td><strong>贵女失明：尚书大人捡了漏</strong></td>
+                <td><code>7549076771941911576</code></td>
+                <td>10.557</td>
+                <td>56000</td>
+                <td>25224</td>
+                <td>6432</td>
+                <td>女频新书榜</td>
+                <td>古风世情,古代言情,穿越,HE,相互救赎,古言权谋</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>89<span class="rank-change rank-up">↑</span></td>
+                <td><strong>京婚靡靡</strong></td>
+                <td><code>7559944418824817688</code></td>
+                <td>10.548</td>
+                <td>95000</td>
+                <td>61029</td>
+                <td>8393</td>
+                <td>女频新书榜</td>
+                <td>职场婚恋,现代言情,婚恋,家庭,追妻,家长里短</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>90<span class="rank-change rank-up">↑</span></td>
+                <td><strong>我创造模式，管你什么境界</strong></td>
+                <td><code>7567590647738158105</code></td>
+                <td>10.545</td>
+                <td>187000</td>
+                <td>97200</td>
+                <td>15750</td>
+                <td>男频新书榜</td>
+                <td>传统玄幻,玄幻,穿越,架空,东方玄幻,魂穿</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>91<span class="rank-change rank-up">↑</span></td>
+                <td><strong>低武：这个武道宗师会仙法？！</strong></td>
+                <td><code>7556048021092322328</code></td>
+                <td>10.544</td>
+                <td>416000</td>
+                <td>216618</td>
+                <td>37821</td>
+                <td>男频新书榜</td>
+                <td>东方仙侠,玄幻,仙侠,穿越,奇幻仙侠,女帝</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>92</td>
+                <td><strong>名义：汉东棋局，由我来打破！</strong></td>
+                <td><code>7593988664409984025</code></td>
+                <td>10.539</td>
+                <td>375000</td>
+                <td>166464</td>
+                <td>39107</td>
+                <td>男频新书榜</td>
+                <td>男频衍生,穿越,同人,仕途,魂穿,衍生</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>93<span class="rank-change rank-up">↑</span></td>
+                <td><strong>好一路人甲，竟亲懵贵族学院F4</strong></td>
+                <td><code>7578121531222412312</code></td>
+                <td>10.537</td>
+                <td>205000</td>
+                <td>91964</td>
+                <td>22179</td>
+                <td>女频新书榜</td>
+                <td>现言脑洞,现代言情,校园,系统,总裁,穿越</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>94<span class="rank-change rank-up">↑</span></td>
+                <td><strong>洛杉矶的雨，北京的风</strong></td>
+                <td><code>7572018162141498393</code></td>
+                <td>10.536</td>
+                <td>16000</td>
+                <td>8068</td>
+                <td>1224</td>
+                <td>女频新书榜</td>
+                <td>游戏体育,衍生,天作之合,带球跑,破镜重圆</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>95<span class="rank-change rank-up">↑</span></td>
+                <td><strong>当剑修去盗墓</strong></td>
+                <td><code>7558497269138328601</code></td>
+                <td>10.536</td>
+                <td>74000</td>
+                <td>30771</td>
+                <td>5536</td>
+                <td>女频新书榜</td>
+                <td>女频悬疑,悬疑,穿越,盗墓,灵异,悬疑恋爱</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>96</td>
+                <td><strong>七零：逃婚后被五个糙汉捡走独宠</strong></td>
+                <td><code>7601813189889625150</code></td>
+                <td>10.536</td>
+                <td>446000</td>
+                <td>219250</td>
+                <td>45179</td>
+                <td>女频新书榜</td>
+                <td>年代,现代言情,穿越,空间,独宠,逃婚</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>97<span class="rank-change rank-up">↑</span></td>
+                <td><strong>五岁神娃玩蛊虫，边境毒枭哭着跑</strong></td>
+                <td><code>7576962667911318553</code></td>
+                <td>10.534</td>
+                <td>411000</td>
+                <td>264958</td>
+                <td>43536</td>
+                <td>女频新书榜</td>
+                <td>年代,现代言情,萌宝,幻想言情,久别重逢,养崽</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>98<span class="rank-change rank-up">↑</span></td>
+                <td><strong>全球僵尸降临，你说道士序列没用</strong></td>
+                <td><code>7589673170848713752</code></td>
+                <td>10.534</td>
+                <td>409000</td>
+                <td>307200</td>
+                <td>30071</td>
+                <td>男频新书榜</td>
+                <td>都市高武,都市,穿越,升级流,魂穿,风水秘术</td>
+                <td>还在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>99<span class="rank-change rank-up">↑</span></td>
+                <td><strong>盗墓：西王母儿子？系统赋我长生</strong></td>
+                <td><code>7574709916242299929</code></td>
+                <td>10.524</td>
+                <td>328000</td>
+                <td>139041</td>
+                <td>21893</td>
+                <td>男频新书榜</td>
+                <td>悬疑脑洞,悬疑,系统,穿越,盗墓,灵异</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+            <tr>
+                <td>100<span class="rank-change rank-up">↑</span></td>
+                <td><strong>牧童：今日情报，五指山压了个猴</strong></td>
+                <td><code>7547702835467521086</code></td>
+                <td>10.524</td>
+                <td>400000</td>
+                <td>261233</td>
+                <td>39107</td>
+                <td>男频新书榜</td>
+                <td>玄幻脑洞,玄幻,系统,穿越,洪荒,诸天万界</td>
+                <td>已不在榜单上</td>
+            </tr>
+            
+                </tbody>
+            </table>
+            
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> 返回主页
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 网络小说排名系统 | 数据仅供参考，排名每日自动更新</p>
+            <p>算法基于读者数、增长率、上榜天数等多维度加权计算</p>
+            <p>最后更新时间: 2026-03-01 16:40:35</p>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $('#rankingTable').DataTable({
+                "paging": false,
+                "searching": false,
+                "info": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/zh-CN.json"
+                },
+                "order": [[0, "asc"]],
+                "columnDefs": [
+                    { "type": "num", "targets": [0, 3, 4, 5, 6] },
+                    { "orderable": true, "targets": "_all" },
+                    { "width": "50px", "targets": [0] },      // 排名
+                    { "width": "280px", "targets": [1] },     // 书名
+                    { "width": "140px", "targets": [2] },     // 编号
+                    { "width": "90px", "targets": [3] },      // 综合得分
+                    { "width": "100px", "targets": [4] },     // 最大读者数
+                    { "width": "100px", "targets": [5] },     // 平均读者数
+                    { "width": "80px", "targets": [6] },      // 增长率
+                    { "width": "80px", "targets": [7] },      // 榜单
+                    { "width": "350px", "targets": [8] },     // 标签
+                    { "width": "90px", "targets": [9] }       // 状态
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
